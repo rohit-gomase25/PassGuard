@@ -1,4 +1,4 @@
-# Password Analyzer AI
+# Password Analyzer with Gemini API
 
 A web app to analyze password strength and estimate time-to-crack using machine learning models.
 
