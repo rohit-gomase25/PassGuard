@@ -8,6 +8,11 @@ function Results({ result }) {
       <div className="text-gray-700">
         <div><span className="font-semibold">Strength:</span> {result.strength}</div>
         <div><span className="font-semibold">Time to Crack:</span> {result.time_to_crack}</div>
+        {result.suggestion && result.suggestion.trim() !== "" && (
+          <div className="mt-4 p-3 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded">
+            <span className="font-semibold">Suggestion:</span> {result.suggestion}
+          </div>
+        )}
       </div>
     </div>
   );

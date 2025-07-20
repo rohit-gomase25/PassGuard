@@ -36,7 +36,18 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-4">
       <div className="bg-white shadow-xl rounded-xl p-8 max-w-md w-full space-y-6">
         <h1 className="text-3xl font-bold text-center text-purple-700 mb-4">Password Analyzer AI</h1>
-        <PasswordInput password={password} setPassword={setPassword} />
+            <div className="flex items-start gap-4">
+              <div className="flex-1 relative">
+                <PasswordInput password={password} setPassword={setPassword} />
+              </div>
+              {result && password && (
+                <div className="w-80 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded shadow-lg">
+                  <div className="font-semibold mb-2">Strong Password Suggestion:</div>
+                  <div className="mb-2">{result.suggestion ? result.suggestion : "No suggestion returned from Gemini API."}</div>
+                  <div className="mt-2 text-sm text-gray-700">{result.explanation}</div>
+                </div>
+              )}
+            </div>
         {loading && <p className="text-blue-500 text-center animate-pulse">Analyzing...</p>}
         {error && <p className="text-red-500 text-center">{error}</p>}
         <StrengthMeter strength={result?.strength} />
