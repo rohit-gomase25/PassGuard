@@ -1,4 +1,4 @@
-# Password Analyzer
+# Password Analyzer using GEMINI API
 
 Password Analyzer is a project that evaluates the strength of user passwords using two machine learning models: a strength model and a time-to-crack model. It also integrates with the Gemini API to provide suggestions for stronger passwords.
 
@@ -43,6 +43,4 @@ To run the project locally:
 2. Run the Flask app in `backend/app.py`.
 3. Use the frontend interface to input passwords and view analysis results.
 
-## License
 
-This project is licensed under the MIT License.
